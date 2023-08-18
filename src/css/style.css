@@ -34,17 +34,39 @@ input[type="date"] {
     border-radius: 4px;
     margin-bottom: 15px;
 }
-
-button[type="submit"] {
-    background-color: rgb(55, 54, 54);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
+.btn {
     width: 100%;
+    padding: 10px 15px;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
     margin-left: 10px;
-}
-button[type="submit"]:hover{
-   background-color: rgb(73, 73, 73);
-}
+   }
+   button:hover {
+    color: black;
+   }
+   button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
